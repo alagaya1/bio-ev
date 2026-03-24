@@ -39,6 +39,15 @@
   .footer-links { display: flex; gap: 24px; }
   .footer-links a { font-size: 13px; color: #7A6A8A; text-decoration: none; }
   .footer-links a:hover { color: #C4B8D4; }
+
+  @media (max-width: 768px) {
+    .nav { padding: 16px 24px; }
+    .main { padding: 60px 24px; }
+    .heading { font-size: 28px; }
+    .footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
+    .footer-meta { display: none; }
+    .footer-links { justify-content: center; }
+  }
 </style>
 </head>
 <body>
@@ -67,12 +76,7 @@
 
 <footer class="footer">
   <img src="Bio-EV-orange.png" alt="Bio-EV" style="height:32px;width:auto;display:block;">
-  <p class="footer-meta">Walnut Creek, CA &nbsp;&middot;&nbsp; info@bio-ev.com &nbsp;&middot;&nbsp; &copy; 2026 Bio-EV, Inc.</p>
+  <p class="footer-meta">Walnut Creek, CA &nbsp;&middot;&nbsp; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="caa3a4aca58aa8a3a5e7afbce4a9a5a7">[email&#160;protected]</a> &nbsp;&middot;&nbsp; &copy; 2026 Bio-EV, Inc.</p>
   <div class="footer-links">
     <a href="https://www.linkedin.com/company/bio-ev" target="_blank">LinkedIn</a>
-    <a href="https://www.instagram.com/bioevevents/" target="_blank">Instagram</a>
-  </div>
-</footer>
-
-</body>
-</html>
+ 
