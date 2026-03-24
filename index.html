@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bio-EV — Homepage Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: #F7F3EF; color: #2D1E3A; }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 60px; background: #2D1E3A; position: sticky; top: 0; z-index: 100; }
+  .nav-logo { font-size: 22px; font-weight: 700; color: #F7F3EF; letter-spacing: -0.02em; text-decoration: none; }
+  .nav-logo span { color: #E8A87C; }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a { font-size: 14px; color: #C4B8D4; text-decoration: none; transition: color 0.15s; }
+  .nav-links a:hover { color: #F7F3EF; }
+  .nav-cta { background: #E8A87C; color: #2D1E3A !important; border-radius: 7px; padding: 10px 22px; font-weight: 500; }
+  .hero { background: #2D1E3A; padding: 88px 60px 64px; text-align: center; }
+  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #E8A87C; margin-bottom: 22px; }
+  .hero-h1 { font-family: 'Lora', Georgia, serif; font-size: 54px; font-weight: 400; line-height: 1.15; color: #F7F3EF; letter-spacing: -0.02em; margin-bottom: 22px; }
+  .hero-h1 em { font-style: italic; color: #C9A8D8; }
+  .hero-sub { font-size: 17px; line-height: 1.75; color: #C4B8D4; max-width: 580px; margin: 0 auto; }
+  .hero-since { font-size: 13px; color: rgba(247,243,239,0.35); letter-spacing: 0.06em; margin-top: 32px; font-style: italic; font-family: 'Lora', Georgia, serif; }
+  .divider-bar { height: 4px; display: flex; }
+  .divider-bar span { flex: 1; }
+  .divider-bar span:nth-child(1) { background: #7C4F8A; }
+  .divider-bar span:nth-child(2) { background: #E8A87C; }
+  .divider-bar span:nth-child(3) { background: #2D8C6F; }
+  .section-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 16px; }
+  .serif-h2 { font-family: 'Lora', Georgia, serif; font-weight: 400; letter-spacing: -0.02em; line-height: 1.25; }
+  .services { background: #F7F3EF; padding: 88px 60px; }
+  .services-header { margin-bottom: 44px; }
+  .services-sub { font-size: 16px; color: #7A6A8A; line-height: 1.75; max-width: 580px; margin-top: 12px; }
+  .service-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .service-card { background: #fff; border: 1px solid rgba(45,30,58,0.08); border-radius: 18px; padding: 40px 36px; }
+  .service-pip { width: 12px; height: 12px; border-radius: 50%; margin-bottom: 28px; }
+  .service-title { font-family: 'Lora', Georgia, serif; font-size: 24px; font-weight: 400; color: #2D1E3A; margin-bottom: 16px; letter-spacing: -0.01em; }
+  .service-desc { font-size: 15px; line-height: 1.85; color: #7A6A8A; }
+  .legacy { background: #2D1E3A; padding: 88px 60px; }
+  .legacy-header { display: flex; flex-direction: column; gap: 16px; margin-bottom: 48px; }
+  .legacy-intro { font-size: 16px; line-height: 1.8; color: #9A88B0; max-width: 580px; }
+  .timeline { position: relative; width: 100%; }
+  .tl-spine { position: absolute; left: 120px; top: 24px; bottom: 24px; width: 1px; background: rgba(255,255,255,0.08); }
+  .tl-spine-fill { position: absolute; left: 120px; top: 24px; width: 1px; height: calc(100% - 48px); background: linear-gradient(to bottom, #E8A87C, #C9A8D8, #2D8C6F); }
+  .tl-item { display: flex; align-items: flex-start; padding: 28px 0; position: relative; }
+  .tl-item + .tl-item { border-top: 1px solid rgba(255,255,255,0.05); }
+  .tl-left { width: 120px; flex-shrink: 0; padding-right: 40px; display: flex; flex-direction: column; align-items: flex-end; padding-top: 4px; position: relative; }
+  .tl-year { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; line-height: 1; margin-bottom: 4px; }
+  .tl-pillar-tag { font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-align: right; line-height: 1.4; }
+  .tl-node { position: absolute; right: -7px; top: 6px; width: 14px; height: 14px; border-radius: 50%; border: 2px solid #2D1E3A; z-index: 2; }
+  .tl-right { flex: 1; padding-left: 48px; }
+  .tl-title { font-family: 'Lora', Georgia, serif; font-size: 22px; font-weight: 400; color: #F7F3EF; letter-spacing: -0.01em; margin-bottom: 14px; line-height: 1.3; }
+  .tl-body { font-size: 15px; line-height: 1.85; color: #9A88B0; }
+  .item-1 .tl-year { color: #E8A87C; } .item-1 .tl-pillar-tag { color: #A06840; } .item-1 .tl-node { background: #E8A87C; }
+  .item-2 .tl-year { color: #C9A8D8; } .item-2 .tl-pillar-tag { color: #8A6A9A; } .item-2 .tl-node { background: #C9A8D8; }
+  .item-3 .tl-year { color: #2D8C6F; } .item-3 .tl-pillar-tag { color: #1A6050; } .item-3 .tl-node { background: #2D8C6F; }
+  .founders { background: #F7F3EF; padding: 88px 60px; }
+  .stack-card { background: #fff; border: 1px solid rgba(45,30,58,0.08); border-radius: 18px; padding: 40px 36px; margin-bottom: 20px; display: flex; align-items: flex-start; }
+  .stack-card:last-child { margin-bottom: 0; }
+  .stack-card-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 12px; width: 110px; }
+  .avatar { width: 68px; height: 68px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; }
+  .avatar-j { background: #EDD8F5; color: #4B2060; }
+  .avatar-a { background: #D5EDE5; color: #0F5E3F; }
+  .stack-name { font-size: 14px; font-weight: 600; color: #2D1E3A; text-align: center; line-height: 1.3; }
+  .stack-role { font-size: 10px; color: #7C4F8A; letter-spacing: 0.07em; text-transform: uppercase; text-align: center; line-height: 1.4; font-weight: 600; }
+  .stack-divider { width: 1px; background: rgba(45,30,58,0.07); align-self: stretch; margin: 0 32px; flex-shrink: 0; }
+  .founder-bio { font-size: 15px; line-height: 1.9; color: #7A6A8A; flex: 1; padding-top: 4px; }
+  .testimonials { background: #2D1E3A; padding: 88px 60px; }
+  .testi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .testi-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; }
+  .testi-mark { font-size: 48px; color: #E8A87C; line-height: 0.5; margin-bottom: 18px; display: block; font-family: 'Lora', Georgia, serif; }
+  .testi-quote { font-family: 'Lora', Georgia, serif; font-style: italic; font-size: 15px; line-height: 1.8; color: #C4B8D4; flex: 1; }
+  .testi-quote strong { font-style: normal; font-weight: 600; color: #F7F3EF; }
+  .testi-attribution { margin-top: 28px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.07); }
+  .testi-name { font-size: 14px; font-weight: 600; color: #F7F3EF; margin-bottom: 4px; }
+  .testi-role { font-size: 12px; color: #9A88B0; }
+  .clients { background: #2D8C6F; padding: 72px 60px; }
+  .clients-header { text-align: center; margin-bottom: 44px; }
+  .clients-h2 { font-family: 'Lora', Georgia, serif; font-size: 28px; font-weight: 400; color: #F7F3EF; letter-spacing: -0.02em; }
+  .clients-h2 em { font-style: italic; color: rgba(247,243,239,0.7); }
+  .logo-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+  .logo-cell { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 16px 12px; display: flex; align-items: center; justify-content: center; min-height: 58px; }
+  .logo-text { font-size: 11px; font-weight: 600; color: rgba(247,243,239,0.85); text-align: center; line-height: 1.3; }
+  .clients-footer { text-align: center; margin-top: 28px; }
+  .clients-more { font-size: 14px; font-style: italic; font-family: 'Lora', Georgia, serif; color: rgba(247,243,239,0.55); }
+  .cta-section { background: #2D1E3A; padding: 88px 60px; }
+  .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .cta-h2 { font-family: 'Lora', Georgia, serif; font-size: 34px; font-weight: 400; color: #F7F3EF; line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 18px; }
+  .cta-h2 em { font-style: italic; color: #C9A8D8; }
+  .cta-body { font-size: 15px; line-height: 1.8; color: #9A88B0; }
+  .form-card { background: #F7F3EF; border-radius: 18px; padding: 40px 36px; }
+  .cta-form { display: flex; flex-direction: column; gap: 14px; }
+  .cta-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .cta-input { background: #fff; border: 1px solid rgba(45,30,58,0.15); border-radius: 10px; padding: 14px 18px; font-size: 15px; color: #2D1E3A; outline: none; width: 100%; font-family: 'DM Sans', sans-serif; }
+  .cta-input::placeholder { color: rgba(45,30,58,0.3); }
+  .cta-submit { background: #E8A87C; color: #2D1E3A; border: none; border-radius: 10px; padding: 15px; font-size: 15px; font-weight: 600; cursor: pointer; width: 100%; font-family: 'DM Sans', sans-serif; margin-top: 4px; }
+  .cta-note { font-size: 12px; color: #9A88B0; text-align: center; }
+  .footer { background: #1E1228; padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-size: 18px; font-weight: 700; color: #F7F3EF; }
+  .footer-logo span { color: #E8A87C; }
+  .footer-meta { font-size: 13px; color: #7A6A8A; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 13px; color: #7A6A8A; text-decoration: none; }
+  .footer-links a:hover { color: #C4B8D4; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="#hero" class="nav-logo">Bio<span>-EV</span></a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#legacy">Our legacy</a>
+    <a href="#about">About</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#join" class="nav-cta">Join the network</a>
+  </div>
+</nav>
+
+<section class="hero" id="hero">
+  <p class="eyebrow">Life Sciences Events &amp; Community</p>
+  <h1 class="hero-h1">Built on <em>partnership.</em><br>Sustained by trust.</h1>
+  <p class="hero-sub">Bio-EV connects life science researchers, vendors, and procurement teams through expertly curated events, grounded in two decades of relationships that last.</p>
+  <p class="hero-since">Serving the Bay Area life science community since 2015.</p>
+</section>
+
+<div class="divider-bar"><span></span><span></span><span></span></div>
+
+<section class="services" id="services">
+  <div class="services-header">
+    <p class="section-tag" style="color:#7C4F8A">What we produce</p>
+    <h2 class="serif-h2" style="font-size:32px;color:#2D1E3A">Events that earn their place in your calendar.</h2>
+    <p class="services-sub">Two focused formats. Both designed for the same outcome: conversations that create lasting value for scientists and vendors alike.</p>
+  </div>
+  <div class="service-duo">
+    <div class="service-card">
+      <div class="service-pip" style="background:#E8A87C"></div>
+      <h3 class="service-title">On-site trade shows</h3>
+      <p class="service-desc">Hosted at biotech and pharma campuses, incubator hubs, and universities across the Bay Area, these events are built around skilled matchmaking. We invite the right vendors to the right institutions, bringing the latest products, services, and technologies directly to the researchers who need them. We ensure that the hosting organizations walk away with something they can point to: new technologies discovered, new partnerships formed, and a team that left feeling their time was well spent.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-pip" style="background:#7C4F8A"></div>
+      <h3 class="service-title">Community &amp; networking events</h3>
+      <p class="service-desc">Open to the broader Bay Area life science community, these events share the same goals as our on-site trade shows while expanding the reach. Vendors connect with a wider pool of scientists and procurement professionals, and networking happens on a larger scale. Some events take on a more social character, like our BioBeats series, which brings the community together over live music and the kind of relaxed conversations that rarely happen in a conference room.</p>
+    </div>
+  </div>
+</section>
+
+<section class="legacy" id="legacy">
+  <div class="legacy-header">
+    <div>
+      <p class="section-tag" style="color:#9A88B0">Our legacy</p>
+      <h2 class="serif-h2" style="font-size:36px;color:#F7F3EF">Two decades <em style="font-style:italic;color:#C9A8D8">in the making.</em></h2>
+    </div>
+    <p class="legacy-intro">Bio-EV didn't emerge from a pitch deck. It grew from years of showing up at labs, at trade shows, at conferences, and understanding what scientists and vendors actually need from each other.</p>
+  </div>
+  <div class="timeline">
+    <div class="tl-spine"></div>
+    <div class="tl-spine-fill"></div>
+    <div class="tl-item item-1">
+      <div class="tl-left"><span class="tl-year">2004</span><span class="tl-pillar-tag">The<br>foundation</span><div class="tl-node"></div></div>
+      <div class="tl-right">
+        <h3 class="tl-title">A gap in the life science industry worth closing.</h3>
+        <p class="tl-body">During the Bay Area's biotech boom, a clear need was emerging. Scientists and the vendors serving them rarely had meaningful opportunities to connect. The trade show model of the era was transactional, rushed, and poorly matched. The work of building something better began here, event by event, relationship by relationship.</p>
+      </div>
+    </div>
+    <div class="tl-item item-2">
+      <div class="tl-left"><span class="tl-year">2015</span><span class="tl-pillar-tag">The<br>evolution</span><div class="tl-node"></div></div>
+      <div class="tl-right">
+        <h3 class="tl-title">Bio-EV is established. Alfred and Julie join forces.</h3>
+        <p class="tl-body">By 2015, both founders had earned their perspective the hard way. Julie had spent years as a successful biotech sales professional before transitioning into life science events in 2008, bringing a vendor-side fluency that proved invaluable. Together, she and Alfred founded Bio-EV to raise the bar on what a life science event could be: more curated, more purposeful, and built to create value long after the room emptied.</p>
+      </div>
+    </div>
+    <div class="tl-item item-3">
+      <div class="tl-left"><span class="tl-year">Today</span><span class="tl-pillar-tag">The<br>network</span><div class="tl-node"></div></div>
+      <div class="tl-right">
+        <h3 class="tl-title">A premier hub for life science collaboration.</h3>
+        <p class="tl-body">From biotech and pharma companies to incubator hubs and universities across the SF Bay Area and beyond, Bio-EV is the trusted connector between scientists, vendors, and procurement teams. A community built not on volume, but on trust earned over time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="founders" id="about">
+  <p class="section-tag" style="color:#7C4F8A">Meet Alfred &amp; Julie</p>
+  <h2 class="serif-h2" style="font-size:32px;color:#2D1E3A;margin-bottom:44px">The people behind <em style="font-style:italic;color:#7C4F8A">Bio-EV.</em></h2>
+  <div class="stack-card">
+    <div class="stack-card-left">
+      <div class="avatar avatar-j">JN</div>
+      <p class="stack-name">Julie Neeb</p>
+      <p class="stack-role">CEO</p>
+    </div>
+    <div class="stack-divider"></div>
+    <p class="founder-bio">Julie has a rare gift for knowing who should be in the room together and making sure they get there. With roots in biotech sales and over fifteen years in life science events, she brings a vendor-side fluency to Bio-EV that shapes everything from how events are curated to how relationships are maintained long after the show ends. She is known for her attention to detail, her warmth, and her ability to make both scientists and sales teams feel equally well served. Julie lives in the San Francisco Bay Area with her husband and daughter and recharges on a yoga mat, a tennis court, a golf course, or out on the water.</p>
+  </div>
+  <div class="stack-card">
+    <div class="stack-card-left">
+      <div class="avatar avatar-a">AL</div>
+      <p class="stack-name">Alfred Lagaya</p>
+      <p class="stack-role">President</p>
+    </div>
+    <div class="stack-divider"></div>
+    <p class="founder-bio">Alfred's path to Bio-EV began in a research lab. After earning his Biology degree from San Diego State University, he worked as a scientist in genomic research during the Bay Area's biotech boom of the 1990s. A successful career in life science sales followed, covering everything from lab consumables to antibodies and custom services. He then spent over a decade shaping how scientists and vendors connect before establishing Bio-EV with Julie in 2015. He lives in the Bay Area with his wife and three kids, and outside of work he trains in Jiu Jitsu, plays golf, and has been DJing since before biotech was even a thing.</p>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <p class="section-tag" style="color:#9A88B0">What people say</p>
+  <h2 class="serif-h2" style="font-size:30px;color:#F7F3EF;margin-bottom:40px">Trust built over <em style="font-style:italic;color:#C9A8D8">two decades</em> of showing up.</h2>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div><span class="testi-mark">&ldquo;</span>
+      <p class="testi-quote">I can always count on the event being well attended, very organized, and follow-up contact names sent to me in a timely manner. Those are the expectations I have for a successful event, and <strong>Alfred and Julie always hit the mark.</strong></p></div>
+      <div class="testi-attribution"><p class="testi-name">Jane Berry</p><p class="testi-role">Senior Account Manager</p></div>
+    </div>
+    <div class="testi-card">
+      <div><span class="testi-mark">&ldquo;</span>
+      <p class="testi-quote">Each and every show allows me to gather quality leads and key contacts. The marketing, show set-up, and follow-up contact leads have been <strong>a key element of our company's sales growth over the years.</strong></p></div>
+      <div class="testi-attribution"><p class="testi-name">Tony Fong</p><p class="testi-role">Liquid Handling Sales</p></div>
+    </div>
+    <div class="testi-card">
+      <div><span class="testi-mark">&ldquo;</span>
+      <p class="testi-quote">Alfred and Julie go the extra mile to make sure all of the appropriate scientists and managers are invited to their events. <strong>They are ALL about quality.</strong> I am highly recommending them for future events.</p></div>
+      <div class="testi-attribution"><p class="testi-name">Violeta Jordan</p><p class="testi-role">Global Director, Research Product Management</p></div>
+    </div>
+    <div class="testi-card">
+      <div><span class="testi-mark">&ldquo;</span>
+      <p class="testi-quote">Alfred Lagaya is quite a special rep, scientist, manager and biotech professional of the 1st Stripe. <strong>You can put your company's reputation on the line by utilizing Alfred Lagaya</strong> with any life science sales or marketing issues.</p></div>
+      <div class="testi-attribution"><p class="testi-name">Ed Greene</p><p class="testi-role">Industry Veteran and List Owner, EDSJOBLIST</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="clients">
+  <div class="clients-header">
+    <p class="section-tag" style="color:rgba(247,243,239,0.55)">Vendors we've partnered with</p>
+    <h2 class="clients-h2">Trusted by the industry's <em>leading innovators.</em></h2>
+  </div>
+  <div class="logo-grid">
+    <div class="logo-cell"><span class="logo-text">Thermo Fisher</span></div>
+    <div class="logo-cell"><span class="logo-text">Sartorius</span></div>
+    <div class="logo-cell"><span class="logo-text">Eppendorf</span></div>
+    <div class="logo-cell"><span class="logo-text">Tecan</span></div>
+    <div class="logo-cell"><span class="logo-text">MilliporeSigma</span></div>
+    <div class="logo-cell"><span class="logo-text">Charles River Labs</span></div>
+    <div class="logo-cell"><span class="logo-text">Stemcell Technologies</span></div>
+    <div class="logo-cell"><span class="logo-text">Azenta</span></div>
+    <div class="logo-cell"><span class="logo-text">Illumina</span></div>
+    <div class="logo-cell"><span class="logo-text">Bio-Rad</span></div>
+    <div class="logo-cell"><span class="logo-text">Corning</span></div>
+    <div class="logo-cell"><span class="logo-text">Bio-Techne</span></div>
+    <div class="logo-cell"><span class="logo-text">Revvity</span></div>
+    <div class="logo-cell"><span class="logo-text">Takara Bio</span></div>
+    <div class="logo-cell"><span class="logo-text">Twist Bioscience</span></div>
+    <div class="logo-cell"><span class="logo-text">10x Genomics</span></div>
+    <div class="logo-cell"><span class="logo-text">IDT DNA</span></div>
+    <div class="logo-cell"><span class="logo-text">Beckman Coulter</span></div>
+    <div class="logo-cell"><span class="logo-text">Agilent Technologies</span></div>
+    <div class="logo-cell"><span class="logo-text">Fujifilm</span></div>
+    <div class="logo-cell"><span class="logo-text">BD Biosciences</span></div>
+    <div class="logo-cell"><span class="logo-text">Rainin</span></div>
+    <div class="logo-cell"><span class="logo-text">Molecular Devices</span></div>
+    <div class="logo-cell"><span class="logo-text">Roche</span></div>
+  </div>
+  <div class="clients-footer">
+    <p class="clients-more">Plus many more industry leaders</p>
+  </div>
+</section>
+
+<section class="cta-section" id="join">
+  <div class="split-grid">
+    <div>
+      <p class="section-tag" style="color:#9A88B0">Join the network</p>
+      <h2 class="cta-h2">Ready to bring the right people <em>into the room?</em></h2>
+      <p class="cta-body">Whether you're a vendor looking to reach the right scientists or a researcher wanting to stay ahead of what's new, the Bio-EV network is built for you.</p>
+    </div>
+    <div class="form-card">
+      <div class="cta-form">
+        <div class="cta-row">
+          <input class="cta-input" type="text" placeholder="Your name">
+          <input class="cta-input" type="text" placeholder="Company">
+        </div>
+        <div class="cta-row">
+          <input class="cta-input" type="text" placeholder="Title">
+          <input class="cta-input" type="email" placeholder="Email address">
+        </div>
+        <button class="cta-submit">Join the Bio-EV network</button>
+        <p class="cta-note">No spam. Just invitations to events relevant to you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-logo">Bio<span>-EV</span></div>
+  <p class="footer-meta">Walnut Creek, CA &nbsp;&middot;&nbsp; info@bio-ev.com &nbsp;&middot;&nbsp; &copy; 2026 Bio-EV, Inc.</p>
+  <div class="footer-links">
+    <a href="#">LinkedIn</a>
+    <a href="#">Instagram</a>
+    <a href="#">Privacy</a>
+  </div>
+</footer>
+
+</body>
+</html>
