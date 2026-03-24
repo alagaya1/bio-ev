@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You | Bio-EV</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: #2D1E3A; color: #F7F3EF; min-height: 100vh; display: flex; flex-direction: column; }
+
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 60px; background: #2D1E3A; border-bottom: 0.5px solid rgba(255,255,255,0.08); }
+  .nav-logo img { height: 37px; width: auto; display: block; }
+
+  .main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 80px 60px; text-align: center; }
+  .content { max-width: 560px; }
+
+  .checkmark { width: 72px; height: 72px; border-radius: 50%; background: rgba(45,140,111,0.2); border: 2px solid #2D8C6F; display: flex; align-items: center; justify-content: center; margin: 0 auto 32px; }
+  .checkmark svg { width: 32px; height: 32px; }
+
+  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #E8A87C; margin-bottom: 20px; }
+  .heading { font-family: 'Lora', Georgia, serif; font-size: 38px; font-weight: 400; line-height: 1.2; color: #F7F3EF; letter-spacing: -0.02em; margin-bottom: 20px; }
+  .heading em { font-style: italic; color: #C9A8D8; }
+  .subtext { font-size: 16px; line-height: 1.75; color: #9A88B0; margin-bottom: 40px; }
+
+  .btn { display: inline-block; background: #E8A87C; color: #2D1E3A; border-radius: 8px; padding: 14px 28px; font-size: 15px; font-weight: 600; text-decoration: none; font-family: 'DM Sans', sans-serif; }
+
+  .divider-bar { height: 4px; display: flex; }
+  .divider-bar span { flex: 1; }
+  .divider-bar span:nth-child(1) { background: #7C4F8A; }
+  .divider-bar span:nth-child(2) { background: #E8A87C; }
+  .divider-bar span:nth-child(3) { background: #2D8C6F; }
+
+  .footer { background: #1E1228; padding: 36px 60px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-meta { font-size: 13px; color: #7A6A8A; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 13px; color: #7A6A8A; text-decoration: none; }
+  .footer-links a:hover { color: #C4B8D4; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo"><img src="Bio-EV-orange.png" alt="Bio-EV"></a>
+</nav>
+
+<div class="divider-bar"><span></span><span></span><span></span></div>
+
+<main class="main">
+  <div class="content">
+    <div class="checkmark">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 16L13 23L26 9" stroke="#2D8C6F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <p class="eyebrow">You're in</p>
+    <h1 class="heading">Thank you for joining the <em>Bio-EV network.</em></h1>
+    <p class="subtext">We'll be in touch soon.</p>
+    <a href="index.html" class="btn">Back to Bio-EV</a>
+  </div>
+</main>
+
+<div class="divider-bar"><span></span><span></span><span></span></div>
+
+<footer class="footer">
+  <img src="Bio-EV-orange.png" alt="Bio-EV" style="height:32px;width:auto;display:block;">
+  <p class="footer-meta">Walnut Creek, CA &nbsp;&middot;&nbsp; info@bio-ev.com &nbsp;&middot;&nbsp; &copy; 2026 Bio-EV, Inc.</p>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/company/bio-ev" target="_blank">LinkedIn</a>
+    <a href="https://www.instagram.com/bioevevents/" target="_blank">Instagram</a>
+  </div>
+</footer>
+
+</body>
+</html>
