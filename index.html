@@ -105,7 +105,60 @@
   .footer-meta { font-size: 13px; color: #7A6A8A; }
   .footer-links { display: flex; gap: 24px; }
   .footer-links a { font-size: 13px; color: #7A6A8A; text-decoration: none; }
-  .footer-links a:hover { color: #C4B8D4; }
+
+  /* ── MOBILE STYLES ── */
+  @media (max-width: 768px) {
+
+    /* Nav */
+    .nav { padding: 16px 24px; }
+    .nav-links a:not(.nav-cta) { display: none; }
+    .nav-cta { padding: 8px 16px; font-size: 13px; }
+
+    /* Hero */
+    .hero { padding: 60px 24px 48px; }
+    .hero-h1 { font-size: 36px; }
+    .hero-sub { font-size: 15px; }
+
+    /* Services */
+    .services { padding: 60px 24px; }
+    .service-duo { grid-template-columns: 1fr; gap: 16px; }
+
+    /* Legacy */
+    .legacy { padding: 60px 24px; }
+    .legacy-header { margin-bottom: 32px; }
+    .serif-h2 { font-size: 28px !important; }
+    .tl-left { width: 80px; padding-right: 24px; }
+    .tl-year { font-size: 18px; }
+    .tl-right { padding-left: 28px; }
+    .tl-title { font-size: 18px; }
+    .tl-spine { left: 80px; }
+    .tl-spine-fill { left: 80px; }
+
+    /* Founders */
+    .founders { padding: 60px 24px; }
+    .stack-card { flex-direction: column; align-items: center; gap: 20px; padding: 28px 24px; }
+    .stack-card-left { width: 100%; flex-direction: row; justify-content: flex-start; gap: 16px; }
+    .stack-divider { display: none; }
+    .founder-bio { padding-top: 0; }
+
+    /* Testimonials */
+    .testimonials { padding: 60px 24px; }
+    .testi-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* Clients */
+    .clients { padding: 52px 24px; }
+    .logo-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+
+    /* CTA / Form */
+    .cta-section { padding: 60px 24px; }
+    .split-grid { grid-template-columns: 1fr; gap: 40px; }
+    .cta-h2 { font-size: 26px; }
+    .cta-row { grid-template-columns: 1fr; gap: 12px; }
+
+    /* Footer */
+    .footer { padding: 32px 24px; flex-direction: column; gap: 16px; text-align: center; }
+    .footer-links { justify-content: center; }
+  }
 </style>
 </head>
 <body>
